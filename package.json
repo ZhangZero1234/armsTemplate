@@ -3,7 +3,9 @@
   "version": "{{version}}",
   "description": "{{description}}",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config webpack.dev.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "{{author}}",
