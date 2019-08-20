@@ -50,11 +50,16 @@ module.exports = {
                     {
                         loader:"babel-loader",
                         options:{
-                            presets:["@babel/preset-env"]
+                            presets:["@babel/preset-env"],
+                            plugins: ['@babel/plugin-transform-runtime']
                         }
                     }
-            ],
+                ],
+                exclude: /(node_modules|bower_components)/,
             }
         ]
+    },
+    resolve:{
+        extensions: ['.js', '.vue', '.json']
     }
 }
